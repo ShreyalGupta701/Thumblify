@@ -1,1 +1,1 @@
-# Thumbly
+# Thumblify
