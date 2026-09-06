@@ -106,14 +106,16 @@
 //         </>
 //     );
 // }
-import { MenuIcon, XIcon } from 'lucide-react';
+import { MenuIcon, XIcon, MoonIcon, SunIcon } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar() {
     const { isLoggedIn, user, logout } = useAuth();
+    const { isDark, toggleTheme } = useTheme();
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -155,6 +157,16 @@ export default function Navbar() {
                 </div>
 
                 <div className='flex items-center gap-2'>
+
+                    {/* Theme Toggle */}
+                    <button
+                        onClick={toggleTheme}
+                        className='size-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition'
+                        aria-label='Toggle theme'
+                    >
+                        {isDark ? <SunIcon size={19} /> : <MoonIcon size={19} />}
+                    </button>
+
                     {isLoggedIn ? (
                         <div className='relative group'>
                             <button className='rounded-full size-8 bg-white/20 border-2 border-white/10'>

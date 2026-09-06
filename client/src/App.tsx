@@ -10,16 +10,19 @@ import YtPreview from './pages/YtPreview';
 import Login from './components/Login';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
+import { ThemeProvider } from './context/ThemeContext';
 
 export default function App() {
     const { pathname } = useLocation();
 
     useEffect(() => {
-        window.scrollTo(0, 0);
+        if (!window.location.hash) {
+            window.scrollTo(0, 0);
+        }
     }, [pathname]);
 
     return (
-        <>
+        <ThemeProvider>
             <Toaster />
             <LenisScroll />
             <Navbar />
@@ -32,6 +35,6 @@ export default function App() {
                 <Route path='/login' element={<Login />} />
             </Routes>
             <Footer />
-        </>
+        </ThemeProvider>
     );
 }
