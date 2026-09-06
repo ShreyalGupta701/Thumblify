@@ -99,3 +99,52 @@ export const verifyUser = async (req: Request, res: Response) => {
         res.status(500).json({ message: error.message });
     }
 };
+// Controller for Forgot Password
+export const forgotPassword = async (req: Request, res: Response) => {
+    try {
+        const { email } = req.body;
+
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(400).json({
+                message: 'No account found with this email',
+            });
+        }
+
+        return res.json({
+            message: 'Email verified. You can reset your password.',
+        });
+    } catch (error: any) {
+        console.log(error);
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// Controller for Reset Password
+export const resetPassword = async (req: Request, res: Response) => {
+    try {
+        const { email, password } = req.body;
+
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(400).json({
+                message: 'Invalid email',
+            });
+        }
+
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        user.password = hashedPassword;
+        await user.save();
+
+        return res.json({
+            message: 'Password reset successfully',
+        });
+    } catch (error: any) {
+        console.log(error);
+        res.status(500).json({ message: error.message });
+    }
+};
