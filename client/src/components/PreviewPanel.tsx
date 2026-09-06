@@ -1,5 +1,4 @@
-import { DownloadIcon, ImageIcon, Loader2Icon } from 'lucide-react';
-import type { AspectRatio, IThumbnail } from '../assets/assets';
+import { DownloadIcon, ImageIcon, Loader2Icon, SendIcon } from 'lucide-react';import type { AspectRatio, IThumbnail } from '../assets/assets';
 
 const PreviewPanel = ({ thumbnail, isLoading, aspectRatio }: { thumbnail: IThumbnail | null; isLoading: boolean; aspectRatio: AspectRatio }) => {
     const aspectClasses = {
@@ -16,6 +15,13 @@ const PreviewPanel = ({ thumbnail, isLoading, aspectRatio }: { thumbnail: IThumb
         link.click();
         link.remove();
     };
+    <button
+    type='button'
+    className='mb-6 flex items-center gap-2 rounded-md px-5 py-2.5 text-xs font-medium transition bg-white/30 ring-2 ring-white/40 backdrop-blur hover:scale-105 active:scale-95'
+>
+    <SendIcon className='size-4' />
+    Send Thumbnail
+</button>
 
     return (
         <div className='relative mx-auto w-full max-w-2xl'>

@@ -31,10 +31,14 @@ html.light .bg-black {
 
 /* Mobile menu overlay */
 html.light .bg-black\/40 {
-    background-color: rgba(232, 191, 208, 0.92);
+    background-color: rgba(232, 191, 208, 0.94);
 }
 
-/* All white text becomes BLACK */
+/* =========================================
+   TEXT
+   ========================================= */
+
+/* White text → black */
 html.light .text-white {
     color: #111111;
 }
@@ -67,29 +71,32 @@ html.light .text-white\/30 {
     color: rgba(17, 17, 17, 0.30);
 }
 
-/* White transparent cards */
-html.light .bg-white\/5 {
-    background-color: rgba(255, 255, 255, 0.30);
+/* Zinc text → black/dark */
+html.light .text-zinc-100 {
+    color: #111111;
 }
 
-html.light .bg-white\/10 {
-    background-color: rgba(255, 255, 255, 0.35);
+html.light .text-zinc-200 {
+    color: #151515;
 }
 
-html.light .bg-white\/20 {
-    background-color: rgba(255, 255, 255, 0.40);
+html.light .text-zinc-300 {
+    color: #222222;
 }
 
-/* Borders */
-html.light .border-white\/10 {
-    border-color: rgba(17, 17, 17, 0.15);
+html.light .text-zinc-400 {
+    color: #333333;
 }
 
-html.light .border-white\/20 {
-    border-color: rgba(17, 17, 17, 0.22);
+html.light .text-zinc-500 {
+    color: #444444;
 }
 
-/* Slate text → dark */
+html.light .text-zinc-600 {
+    color: #333333;
+}
+
+/* Slate text */
 html.light .text-slate-300 {
     color: #252525;
 }
@@ -118,7 +125,47 @@ html.light .text-slate-900 {
     color: #111111;
 }
 
-/* Pink text */
+/* =========================================
+   CARDS / TRANSPARENT ELEMENTS
+   ========================================= */
+
+html.light .bg-white\/5 {
+    background-color: rgba(255, 255, 255, 0.32);
+}
+
+html.light .bg-white\/6 {
+    background-color: rgba(255, 255, 255, 0.36);
+}
+
+html.light .bg-white\/8 {
+    background-color: rgba(255, 255, 255, 0.42);
+}
+
+html.light .bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+html.light .bg-white\/20 {
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+/* Borders */
+html.light .border-white\/10 {
+    border-color: rgba(17, 17, 17, 0.16);
+}
+
+html.light .border-white\/12 {
+    border-color: rgba(17, 17, 17, 0.18);
+}
+
+html.light .border-white\/20 {
+    border-color: rgba(17, 17, 17, 0.22);
+}
+
+/* =========================================
+   PINK
+   ========================================= */
+
 html.light .text-pink-300 {
     color: #c21868;
 }
@@ -131,7 +178,6 @@ html.light .text-pink-500 {
     color: #c21868;
 }
 
-/* Pink buttons */
 html.light .bg-pink-600 {
     background-color: #d4146d;
 }
@@ -140,7 +186,6 @@ html.light .bg-pink-700 {
     background-color: #b80f5c;
 }
 
-/* Pink borders */
 html.light .border-pink-600 {
     border-color: #c21868;
 }
@@ -149,9 +194,12 @@ html.light .border-pink-500 {
     border-color: #c21868;
 }
 
-/* Navbar */
+/* =========================================
+   NAVBAR
+   ========================================= */
+
 html.light nav {
-    background-color: rgba(232, 191, 208, 0.70);
+    background-color: rgba(232, 191, 208, 0.72);
     border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
@@ -167,12 +215,16 @@ html.light nav button {
     color: #111111;
 }
 
-/* Inputs */
+/* =========================================
+   INPUTS & SELECTS
+   ========================================= */
+
 html.light input,
-html.light textarea {
+html.light textarea,
+html.light select {
     color: #111111;
-    background-color: rgba(255, 255, 255, 0.35);
-    border-color: rgba(17, 17, 17, 0.15);
+    background-color: rgba(255, 255, 255, 0.42);
+    border-color: rgba(17, 17, 17, 0.16);
 }
 
 html.light input::placeholder,
@@ -180,7 +232,23 @@ html.light textarea::placeholder {
     color: rgba(17, 17, 17, 0.50);
 }
 
-/* Selection */
+html.light select option {
+    background-color: #e8bfd0;
+    color: #111111;
+}
+
+/* =========================================
+   IMAGE GENERATING OVERLAY
+   ========================================= */
+
+html.light .bg-black\/50 {
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================
+   SELECTION & BUTTON
+   ========================================= */
+
 body::selection {
     @apply bg-pink-600 text-white;
 }
